@@ -1,0 +1,833 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akukhanye Private College · Est. 2010</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f0f4f8;
+            color: #1a2a3a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: #0a1e2b;
+            color: #f0e6d3;
+            padding: 10px 0;
+            border-bottom: 3px solid #c8963e;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar .brand {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .top-bar .brand i {
+            color: #c8963e;
+            margin-right: 8px;
+        }
+
+        .top-bar .badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar .badges span {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0a1e2b;
+        }
+
+        .logo span {
+            color: #c8963e;
+        }
+
+        .logo .tagline {
+            font-size: 0.75rem;
+            color: #6b7a8a;
+            letter-spacing: 0.5px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #1a2a3a;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #c8963e;
+        }
+
+        .btn-primary {
+            background: #c8963e;
+            color: white;
+            padding: 10px 28px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #b07d2a;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #0a1e2b;
+            padding: 10px 28px;
+            border: 2px solid #c8963e;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: #c8963e;
+            color: white;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0a1e2b 0%, #1a3a4a 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "✦";
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.04;
+            right: -50px;
+            top: -50px;
+            transform: rotate(15deg);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .hero h2 span {
+            color: #c8963e;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .hero .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .hero .stat-item {
+            text-align: center;
+        }
+
+        .hero .stat-item .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #c8963e;
+        }
+
+        .hero .stat-item .label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .hero .cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .hero .btn-primary {
+            background: #c8963e;
+            color: white;
+            padding: 14px 40px;
+            font-size: 1rem;
+        }
+
+        .hero .btn-primary:hover {
+            background: #b07d2a;
+        }
+
+        .hero .btn-outline {
+            border-color: white;
+            color: white;
+            padding: 14px 40px;
+            font-size: 1rem;
+        }
+
+        .hero .btn-outline:hover {
+            background: white;
+            color: #0a1e2b;
+        }
+
+        /* Section */
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #0a1e2b;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6b7a8a;
+            max-width: 650px;
+            margin: 0 auto 45px;
+            font-size: 1.05rem;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #c8963e;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .card .icon {
+            font-size: 2.2rem;
+            color: #c8963e;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #0a1e2b;
+        }
+
+        .card p {
+            color: #5a6a7a;
+            font-size: 0.95rem;
+        }
+
+        .card .meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #8a9aaa;
+        }
+
+        .card .meta .fill {
+            color: #c8963e;
+            font-weight: 700;
+        }
+
+        .card .btn-sm {
+            display: inline-block;
+            margin-top: 15px;
+            background: #0a1e2b;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .card .btn-sm:hover {
+            background: #c8963e;
+        }
+
+        /* Features */
+        .features {
+            background: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: #c8963e;
+            margin-bottom: 12px;
+        }
+
+        .feature-item h4 {
+            font-size: 1rem;
+            color: #0a1e2b;
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            color: #6b7a8a;
+        }
+
+        /* Programmes */
+        .programmes {
+            background: #f8fafc;
+        }
+
+        .programme-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-left: 4px solid #c8963e;
+        }
+
+        .programme-card h3 {
+            font-size: 1.1rem;
+            color: #0a1e2b;
+        }
+
+        .programme-card .level {
+            display: inline-block;
+            background: #0a1e2b;
+            color: white;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin: 8px 0;
+        }
+
+        /* About */
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-grid .text h3 {
+            font-size: 1.8rem;
+            color: #0a1e2b;
+            margin-bottom: 15px;
+        }
+
+        .about-grid .text h3 span {
+            color: #c8963e;
+        }
+
+        .about-grid .text p {
+            color: #5a6a7a;
+            margin-bottom: 15px;
+        }
+
+        .about-grid .values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .about-grid .values .val {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .about-grid .values .val i {
+            color: #c8963e;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .about-grid .values .val strong {
+            display: block;
+            font-size: 0.85rem;
+            color: #0a1e2b;
+        }
+
+        /* Accreditation */
+        .accred {
+            background: #0a1e2b;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .accred .badge-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .accred .badge-grid span {
+            background: rgba(255,255,255,0.06);
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a1e2b;
+            color: #c8d6e0;
+            padding: 40px 0 20px;
+            border-top: 3px solid #c8963e;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-grid h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .footer-grid a {
+            display: block;
+            color: #c8d6e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            transition: color 0.3s;
+        }
+
+        .footer-grid a:hover {
+            color: #c8963e;
+        }
+
+        .footer-grid .contact i {
+            width: 20px;
+            color: #c8963e;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .about-grid .values {
+                grid-template-columns: 1fr 1fr;
+            }
+            .header .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav {
+                justify-content: center;
+            }
+            .hero .stats {
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-grid .values {
+                grid-template-columns: 1fr;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            .top-bar .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="brand">
+                <i class="fas fa-graduation-cap"></i> Proudly South African · Est. 2010
+            </div>
+            <div class="badges">
+                <span><i class="fas fa-check-circle"></i> QCTO Accredited</span>
+                <span><i class="fas fa-check-circle"></i> SETA Aligned</span>
+                <span><i class="fas fa-check-circle"></i> NQF Certified</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Akukhanye <span>College</span></h1>
+                <div class="tagline">Shaping careers, building futures since 2010</div>
+            </div>
+            <nav class="nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Courses</a>
+                <a href="#">Events</a>
+                <a href="#">Contact</a>
+                <a href="#" class="btn-primary" style="padding: 8px 24px;">Apply Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to <span>Akukhanye</span> Private College</h2>
+            <p>QCTO &amp; SETA Accredited programmes that transform students into work-ready graduates.</p>
+            <div class="cta-group">
+                <a href="#" class="btn-primary">Apply Now</a>
+                <a href="#" class="btn-outline">Explore Courses</a>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="number">5,200+</div>
+                    <div class="label">Graduates Produced</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">24+</div>
+                    <div class="label">Courses Offered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">96%</div>
+                    <div class="label">Graduate Pass Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">15+</div>
+                    <div class="label">Years of Excellence</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flagship Programmes -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Flagship <span style="color:#c8963e;">Programmes</span></h2>
+            <p class="section-subtitle">QCTO &amp; SETA accredited programmes that give you the skills employers actually want.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Business Management</h3>
+                    <p>Leadership · Finance · Marketing</p>
+                    <div class="meta">
+                        <span>NQF Level 5</span>
+                        <span>12 months</span>
+                    </div>
+                    <div class="meta">
+                        <span class="fill">80% seats filled</span>
+                        <a href="#" class="btn-sm">Enrol</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>ICT Technical Support</h3>
+                    <p>Networking · Systems · Support</p>
+                    <div class="meta">
+                        <span>NQF Level 4</span>
+                        <span>12 months</span>
+                    </div>
+                    <div class="meta">
+                        <span class="fill">65% seats filled</span>
+                        <a href="#" class="btn-sm">Enrol</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-coins"></i></div>
+                    <h3>Financial Management</h3>
+                    <p>Accounting · Budgeting · Payroll</p>
+                    <div class="meta">
+                        <span>NQF Level 5</span>
+                        <span>12 months</span>
+                    </div>
+                    <div class="meta">
+                        <span class="fill">90% seats filled</span>
+                        <a href="#" class="btn-sm">Enrol</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-child"></i></div>
+                    <h3>Early Childhood Development</h3>
+                    <p>ECD Practice · Child Care · Education</p>
+                    <div class="meta">
+                        <span>NQF Level 4</span>
+                        <span>12 months</span>
+                    </div>
+                    <div class="meta">
+                        <span class="fill">72% seats filled</span>
+                        <a href="#" class="btn-sm">Enrol</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Programmes -->
+    <section class="section" style="background:#f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Featured <span style="color:#c8963e;">Programmes</span></h2>
+            <p class="section-subtitle">Skills &amp; Occupational Qualifications</p>
+            <div class="card-grid">
+                <div class="programme-card">
+                    <h3>Business Management</h3>
+                    <span class="level">N4–N6</span>
+                    <p>Learn leadership, finance, marketing.</p>
+                    <a href="#" style="color:#c8963e; font-weight:600; text-decoration:none;">Explore →</a>
+                </div>
+                <div class="programme-card">
+                    <h3>IT &amp; Coding</h3>
+                    <span class="level">Software Dev</span>
+                    <p>Cloud, cybersecurity, start your tech career.</p>
+                    <a href="#" style="color:#c8963e; font-weight:600; text-decoration:none;">Explore →</a>
+                </div>
+                <div class="programme-card">
+                    <h3>Engineering Studies</h3>
+                    <span class="level">N1–N3</span>
+                    <p>Electrical, Fitting, Welding. Practical training.</p>
+                    <a href="#" style="color:#c8963e; font-weight:600; text-decoration:none;">Explore →</a>
+                </div>
+                <div class="programme-card">
+                    <h3>Early Childhood Development</h3>
+                    <span class="level">ECD</span>
+                    <p>Qualified practitioner. Teaching &amp; childcare.</p>
+                    <a href="#" style="color:#c8963e; font-weight:600; text-decoration:none;">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Akukhanye -->
+    <section class="section features">
+        <div class="container">
+            <h2 class="section-title">Why <span style="color:#c8963e;">Akukhanye</span></h2>
+            <p class="section-subtitle">Built for your success</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>Fully Accredited</h4>
+                    <p>QCTO &amp; SETA accredited – nationally recognised.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Industry-Relevant</h4>
+                    <p>Courses designed with employers for in-demand skills.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <h4>AI Career Advisor</h4>
+                    <p>24/7 AI guidance for CV tips and career coaching.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Study Anywhere</h4>
+                    <p>Mobile-optimised platform for courses &amp; exams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Our Story -->
+    <section class="section about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="text">
+                    <h3>Our <span>Story</span></h3>
+                    <p><strong>Akukhanya</strong> — meaning <em>"light"</em> in isiXhosa and isiZulu — was founded to bring quality further education to the Eastern Cape.</p>
+                    <p>We believe every student deserves an education that opens doors — not just in theory, but in the real economy.</p>
+                    <p>From a small training centre to a fully accredited college with 16 programmes across NQF Levels 4 and 5.</p>
+                </div>
+                <div>
+                    <h3 style="color:#0a1e2b; margin-bottom:15px;">Our <span style="color:#c8963e;">Values</span></h3>
+                    <div class="values">
+                        <div class="val"><i class="fas fa-star"></i><strong>Excellence</strong></div>
+                        <div class="val"><i class="fas fa-handshake"></i><strong>Integrity</strong></div>
+                        <div class="val"><i class="fas fa-users"></i><strong>Community</strong></div>
+                        <div class="val"><i class="fas fa-lightbulb"></i><strong>Innovation</strong></div>
+                        <div class="val" style="grid-column: span 2;"><i class="fas fa-rocket"></i><strong>Empowerment</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditation -->
+    <section class="accred">
+        <div class="container">
+            <h2 style="color:white; font-size:2rem;">Accreditation</h2>
+            <p style="opacity:0.8; max-width:600px; margin:10px auto 20px;">Recognised by Industry</p>
+            <div class="badge-grid">
+                <span><i class="fas fa-check-circle"></i> QCTO Accredited</span>
+                <span><i class="fas fa-check-circle"></i> SETA Registered</span>
+                <span><i class="fas fa-check-circle"></i> DHET Approved</span>
+                <span><i class="fas fa-check-circle"></i> POPIA Compliant</span>
+                <span><i class="fas fa-check-circle"></i> NQF Levelled</span>
+            </div>
+            <p style="margin-top:20px; font-size:0.9rem; opacity:0.7;">Accreditation Number: 02-QCTO/SDP210525173053 · Valid until 15 May 2030</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Akukhanye College</h4>
+                    <p style="font-size:0.9rem; opacity:0.8;">Empowering futures through quality education in Bizana, Eastern Cape.</p>
+                    <p style="margin-top:8px; font-size:0.85rem; opacity:0.7;">QCTO &amp; SETA aligned programmes.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Courses</a>
+                    <a href="#">Events</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Accreditation</a>
+                </div>
+                <div>
+                    <h4>Programmes</h4>
+                    <a href="#">Business Management</a>
+                    <a href="#">IT &amp; Coding</a>
+                    <a href="#">Engineering Studies</a>
+                    <a href="#">Early Childhood Development</a>
+                    <a href="#">Occupational Certificates</a>
+                </div>
+                <div class="contact">
+                    <h4>Get in Touch</h4>
+                    <p><i class="fas fa-phone"></i> +27 39 251 0118</p>
+                    <p><i class="fas fa-envelope"></i> info@Akukhanye.co.za</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bizana, Eastern Cape</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri 8am–5pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Akukhanye Private College · QCTO &amp; SETA Aligned · POPIA Compliant
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
